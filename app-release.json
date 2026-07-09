@@ -4,8 +4,18 @@
     "name": "KVideo",
     "branch": "main"
   },
-  "currentVersion": "4.9.6",
+  "currentVersion": "4.9.7",
   "releases": [
+    {
+      "version": "4.9.7",
+      "publishedAt": "2026-07-09",
+      "title": "修复旧 Android WebView 白屏",
+      "notes": [
+        "Next.js 构建后的浏览器静态 JS 现在会额外转译到 Chrome/WebView 83 目标，避免小米电视等旧 Android System WebView 因不支持 ??=、||=、&&= 而白屏。",
+        "Cloudflare Pages 构建链路同样会处理输出目录，确保托管站点和 Docker/Node 自托管站点使用一致的旧 WebView 兼容产物。",
+        "新增 WebView 83 静态资源回归测试，防止逻辑赋值语法重新漏进浏览器构建产物。"
+      ]
+    },
     {
       "version": "4.9.6",
       "publishedAt": "2026-07-09",
